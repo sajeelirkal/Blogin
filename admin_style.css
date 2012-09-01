@@ -1,0 +1,73 @@
+#hold {
+float: left;
+height: 500px;
+width: 900px;
+position: relative;
+}
+#top {
+float: left;
+height: 60px;
+width: 900px;
+position: relative;
+background-color: #5AD;
+}
+#log {
+height: 25px;
+width: 900px;
+float: left;
+position: relative;
+}
+#left {
+float: left;
+width: 300px;
+position: relative;
+padding-top: 10px;
+padding-left: 20px;
+}
+#right {
+float: left;
+width: 500px;
+padding-top: 10px;
+padding-left: 20px;
+position: relative;
+left: 20px;
+}
+#hold #top h2 {
+color: #5BA7DB;
+}
+#hold #top h2 {
+color: #000;
+}
+#hold #top h2 {
+color: #FFF;
+}
+#work_area {
+float: left;
+width: 800px;
+position: relative;
+padding-top: 20px;
+padding-left: 50px;
+}
+#hold #work_area h2 {
+color: #5BA7DB;
+}
+#hold #work_area #form1 p {
+color: #5BA7DB;
+}
+#hold #work_area p {
+color: #5BA7DB;
+}
+#hold #work_area #form1 {
+color: #5BA7DB;
+}
+
+table
+{
+border:1px solid black;
+border-collapse:collapse;
+}
+
+td
+{
+border:1px solid black;
+}

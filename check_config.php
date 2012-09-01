@@ -1,0 +1,105 @@
+<?php
+
+$fname = "db_connect.php";
+
+$host = $_POST['hostname'];
+$user = $_POST['username'];
+$pass = $_POST['password'];
+$data = $_POST['database'];
+$cmsuser = $_POST['cms_username'];
+$cmspass = $_POST['cms_password'];
+$sitename = $_POST['sitename'];
+
+$PHP_TEMPLATE_FILE = '<?php
+
+$con = mysql_connect("'.$host.'","'.$user.'","'.$pass.'");
+if(!$con)
+{
+die("connection to database failed".mysql_error());
+}
+
+$dataselect = mysql_select_db("'.$data.'",$con);
+if(!$dataselect)
+{
+die("Database namelist not selected".mysql_error());
+}
+$sitename="'.$sitename.'";
+?>';
+
+
+$file = fopen($fname,"w+");
+fwrite($file, $PHP_TEMPLATE_FILE);
+fclose($file);
+
+
+$con = mysql_connect("$host","$user","$pass");
+if(!$con)
+{
+die("connection to database failed".mysql_error());
+}
+
+$dataselect = mysql_select_db("$data",$con);
+if(!$dataselect)
+{
+die("Database namelist not selected".mysql_error());
+}
+
+mysql_select_db("$data", $con);
+$sql = "CREATE TABLE `articles` (
+`id` INT( 6 ) NOT NULL AUTO_INCREMENT ,
+`title` VARCHAR( 200 ) NOT NULL ,
+`image` VARCHAR( 40 ) NOT NULL ,
+`contents` TEXT NOT NULL ,
+`category` VARCHAR( 20 ) NOT NULL ,
+PRIMARY KEY ( `id` , `title` , `category` )
+) ENGINE = InnoDB;";
+mysql_query($sql,$con);
+
+$sql1 = "CREATE TABLE `category` (
+`category` VARCHAR( 40 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+) ENGINE = MYISAM ;";
+// Execute query
+mysql_query($sql1,$con);
+
+$sql2 = "CREATE TABLE `login` (
+`user` VARCHAR( 20 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL ,
+`password` VARCHAR( 20 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+) ENGINE = InnoDB;";
+mysql_query($sql2,$con);
+
+mysql_query("INSERT INTO login (user, password)
+VALUES ('$cmsuser', '$cmspass')");
+
+$sql3 = "CREATE TABLE `comments` (
+  `cmnt_id` varchar(20) NOT NULL,
+  `comment` varchar(100) NOT NULL,
+  `comment_dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM;";
+mysql_query($sql3,$con);
+
+?>
+<html>
+<head>
+<title>Config successful</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="contain">
+<div id="header">
+<h1>Blog In!!!</h1>
+
+</div>
+<h4>Successfully created your config file</h4>
+<h4>Your login Credentials are: <br/> <br> User name:<font color="red"> <?php echo "$cmsuser";?> </font> <br> password: <font color="red"><?php echo "$cmspass";?></font></h4>
+
+change the permission of db_connect.php<br/><br/>
+
+*delete the install.php from your directory.<br><br>
+
+Go to <a href="index.php">Home page</a>. Or<a href="login.php"> Login here</a>.<br/><br/>
+<div id="footer">
+<div align="center"><strong>SICSR Copyright @ 2012 - All Rights Reserved</strong></div>
+</div>
+</div>
+</body>
+</html>

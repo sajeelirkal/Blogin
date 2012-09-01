@@ -1,0 +1,106 @@
+#contain {
+width: 900px;
+position: relative;
+margin-left:auto;
+margin-right:auto;
+}
+#header {
+float: left;
+height: 80px;
+width: 900px;
+position: relative;
+background-color: #5AD;
+}
+#menus {
+float: left;
+height: 25px;
+width: 884px;
+padding-left: 10px;
+position: relative;
+border-bottom-width: medium;
+border-bottom-style: solid;
+border-bottom-color: #5AD;
+border-right-width: medium;
+border-left-width: medium;
+border-right-style: solid;
+border-left-style: solid;
+border-right-color: #5AD;
+border-left-color: #5AD;
+font-size: 22px;
+color: #5AD;
+}
+
+#r_login{
+padding-right: 10px;
+text-align: right;
+font-size: 18px;
+color: #5AD;
+}
+	
+#l_space {
+float: left;
+width: 540px;
+position: relative;
+padding-right: 20px;
+border-right-width: thin;
+border-right-style: solid;
+border-right-color: #5AD;
+}
+#r_space {
+float: left;
+width: 320px;
+position: relative;
+padding-left: 10px;
+left: 10px;
+padding-top: 10px;
+}
+#footer {
+float: left;
+height: 25px;
+width: 895px;
+position: relative;
+background-color: #5AD;
+padding-top: 5px;
+}
+#contain #header h1 {
+color: #FFF;
+}
+#contain #footer div {
+color: #FFF;
+}
+#header h1 {
+color: #FFF;
+}
+#contain #l_space h2 {
+color: #E87400;
+}
+#contain #r_space h2 {
+color: #E87400;
+}
+#contain #menus a {
+color: #5BA7DB;
+}
+#contain #menus a {
+color: #5BA7DB;
+}
+#menus a {
+color: #5BA7DB;
+}
+#menus a {
+color: #5BA7DB;
+}
+#contain #r_login a {
+color: #5BA7DB;
+}
+#contain #l_space h2 {
+color: #002551;
+}
+#contain #r_space h2 {
+color: #002551;
+}
+#contain #l_space p {
+color: #808080;
+}
+#contain #l_space p {
+color: #626262;
+}
